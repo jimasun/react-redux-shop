@@ -1,0 +1,19 @@
+.Header {
+  height: 60px;
+  background-color: aliceblue;
+  line-height: 60px;
+  padding: 10px 20px;
+  font-family: Georgia;
+}
+
+.title {
+  float: left;
+}
+
+.title .icon {
+  margin-right: 8px;
+}
+
+.cart {
+  float: right;;
+}
