@@ -11,6 +11,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
+      title: 'React/Redux Shop',
       template: './src/index.html'
     }),
     new MiniCssExtractPlugin({
@@ -20,7 +21,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(js)$/,
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: [
           'babel-loader',
@@ -38,5 +39,8 @@ module.exports = {
         loader: 'url-loader'
       }
     ]
+  },
+  resolve: {
+    extensions: ['*', '.webpack.js', '.web.js', '.js', '.json', '.jsx']
   }
 };
