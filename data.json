@@ -1,5 +1,7 @@
 {
   "shop": {
+    "cart": [],
+    "whish": [],
     "items": [
       {
         "id": 1,
