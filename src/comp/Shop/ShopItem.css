@@ -36,8 +36,14 @@
   float: left;
 }
 
-.ShopItem .interact .shop,
+.ShopItem .interact .cart,
 .ShopItem .interact .whish {
   float: right;
-  padding: 0 10px;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.ShopItem .interact .cart.true,
+.ShopItem .interact .whish.true  {
+  color: blueviolet;
 }

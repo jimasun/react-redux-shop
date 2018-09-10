@@ -10,35 +10,15 @@ class Shop extends Component {
     super(props)
   }
 
-  onToggleShop() {
-
-  }
-
-  onToggleWhish() {
-
-  }
-
-  onRemoveFromList(id) {
-
-  }
-
-  onRemoveFromCart(id) {
-
-  }
-
-  addToCart(id) {
-
-  }
-
-  addToList(id) {
-
-  }
-
   render() {
     return (
       <div className="Shop">
         {this.props.items.map((value) =>
-          <ShopItem key={`item-${value.id}`} item={value} />
+          <ShopItem
+            item={value}
+            key={`item-${value.id}`}
+            toggleInCart={() => { this.props.toggleInCart(value.id) }}
+            toggleInWhish={() => { this.props.toggleInWhish(value.id) }} />
         )}
       </div>
     )

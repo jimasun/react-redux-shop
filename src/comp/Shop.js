@@ -7,10 +7,8 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  addToCart: id => dispatch(actions.addToCart(id)),
-  addToList: id => dispatch(actions.addToWhish(id)),
-  onRemoveFromList: id => dispatch(actions.remFromWhish(id)),
-  onRemoveFromCart: id => dispatch(actions.remFromCart(id))
+  toggleInCart: (id) => dispatch(actions.toggleInCart(id)),
+  toggleInWhish: (id) => dispatch(actions.toggleInWhish(id))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Shop)
