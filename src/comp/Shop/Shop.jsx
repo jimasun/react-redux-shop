@@ -5,19 +5,9 @@ import ShopItem from './ShopItem'
 
 import './Shop.css'
 
-import { items } from '../../../.data.json'
-
 class Shop extends Component {
   constructor(props) {
     super(props)
-  }
-
-  onRemoveFromList(id) {
-
-  }
-
-  onRemoveFromCart(id) {
-
   }
 
   onToggleShop() {
@@ -25,6 +15,14 @@ class Shop extends Component {
   }
 
   onToggleWhish() {
+
+  }
+
+  onRemoveFromList(id) {
+
+  }
+
+  onRemoveFromCart(id) {
 
   }
 
@@ -39,7 +37,7 @@ class Shop extends Component {
   render() {
     return (
       <div className="Shop">
-        {items.map((value) =>
+        {this.props.items.map((value) =>
           <ShopItem key={`item-${value.id}`} item={value} />
         )}
       </div>

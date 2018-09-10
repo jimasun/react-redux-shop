@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 import './Content.css'
-import Shop from '../comp/Shop/Shop';
+import Shop from '../comp/Shop';
 
 const Content = () => {
   return (
