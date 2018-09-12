@@ -16,4 +16,5 @@
 
 .cart {
   float: right;;
+  cursor: pointer;
 }
