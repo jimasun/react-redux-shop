@@ -1,11 +1,11 @@
-export const TOGGLE_IN_CART = 'TOGGLE_IN_CART'
-export const TOGGLE_IN_WHISH = 'TOGGLE_IN_WHISH'
-export const ADD_TO_CART = 'ADD_TO_CART'
-export const REM_FROM_CART = 'REM_FROM_CART'
-export const ADD_TO_WHISH = 'ADD_TO_WHISH'
-export const REM_FROM_WHISH = 'REM_FROM_WHISH'
+export const CART_TOG_ITEM = 'CART_TOG_ITEM'
+export const CART_ADD_ITEM = 'CART_ADD_ITEM'
+export const CART_REM_ITEM = 'CART_REM_ITEM'
+export const CART_CHA_COUN = 'CART_CHA_COUN'
 
-export const CHANGE_CART_ITEM_COUNT = 'CHANGE_CART_ITEM_COUNT'
+export const WISH_TOG_ITEM = 'WISH_TOG_ITEM'
+export const WISH_ADD_ITEM = 'WISH_ADD_ITEM'
+export const WISH_REM_ITEM = 'WISH_REM_ITEM'
 
 // Helper function to create basic actionCreators
 export function makeActionCreator(type, ...argNames) {
