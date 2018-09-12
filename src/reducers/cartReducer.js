@@ -7,9 +7,9 @@ const initialState = {
 
 const toggleItem = (prevState, action) => {
   if (!!prevState.items.find(item => item.id === action.item.id)) {
-    return remFromCart(prevState, action)
+    return removeItem(prevState, action)
   } else {
-    return addToCart(prevState, action)
+    return addItem(prevState, action)
   }
 }
 
@@ -38,11 +38,12 @@ const addItem = (prevState, action) => {
 }
 
 const removeItem = (prevState, action) => {
-  const cartItems = [...prevState.items],
-    cartItem = cartItems.find(item => item.id === action.item.id)
+  const cartItem = [...prevState.items]
+    .find(item => item.id === action.item.id)
 
   return Object.assign({}, prevState, {
-    items: cartItems.splice(cartItem, 1),
+    items: [...prevState.items]
+      .filter(item => item.id !== action.item.id),
     total: prevState.total - cartItem.total
   })
 }

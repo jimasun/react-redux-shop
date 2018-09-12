@@ -16,7 +16,7 @@ const ShopItem = (props) => {
             onClick={props.addToCart}>
             <FontAwesomeIcon icon="shopping-basket" /></div>
           <div className={`whish ${props.item.inWish}`}
-            onClick={props.toggleInWhish}>
+            onClick={props.toggleInWish}>
             <FontAwesomeIcon icon="heart" /></div>
         </div>
       </div>

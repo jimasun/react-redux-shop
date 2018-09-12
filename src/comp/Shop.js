@@ -7,16 +7,12 @@ import Shop from './Shop/Shop'
 const mapStateToProps = (state) => {
   const items = [...state.shop.items]
 
-  state.cart.items.forEach(cItem => {
-    items
-      .find(sItem => sItem.id === cItem.id)
-      .inCart = true
-  })
+  items.forEach(sItem => {
+    sItem.inCart = !!state.cart.items
+      .find(cItem => cItem.id === sItem.id) || false
 
-  state.wish.items.forEach(wItem => {
-    items
-      .find(sItem => sItem.id === wItem.id)
-      .inWish = true
+    sItem.inWish = !!state.wish.items
+      .find(wItemId => wItemId === sItem.id) || false
   })
 
   return {
@@ -26,7 +22,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => ({
   addToCart: (item) => dispatch(cart.addItem(item)),
-  toggleInWhish: (item) => dispatch(wish.toggleItem(item))
+  toggleInWish: (id) => dispatch(wish.toggleItem(id))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Shop)

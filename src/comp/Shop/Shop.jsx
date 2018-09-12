@@ -17,7 +17,7 @@ class Shop extends Component {
             item={item}
             key={`item-${item.id}`}
             addToCart={() => { this.props.addToCart(item) }}
-            toggleInWhish={() => { this.props.toggleInWhish(item) }} />
+            toggleInWish={() => { this.props.toggleInWish(item.id) }} />
         )}
       </div>
     )

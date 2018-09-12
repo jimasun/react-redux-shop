@@ -5,15 +5,24 @@ const initialState = {
 }
 
 function toggleItem(prevState, action) {
-  return prevState
+  if (!!prevState.items.find(wItemId => wItemId === action.id)) {
+    return removeItem(prevState, action)
+  } else {
+    return addItem(prevState, action)
+  }
 }
 
 function addItem(prevState, action) {
-  return prevState
+  return Object.assign({}, prevState, {
+    items: [...prevState.items, action.id]
+  })
 }
 
 function removeItem(prevState, action) {
-  return prevState
+  return Object.assign({}, prevState, {
+    items: [...prevState.items]
+      .filter(item => item !== action.id) || []
+  })
 }
 
 export default (state = initialState, action) => {
