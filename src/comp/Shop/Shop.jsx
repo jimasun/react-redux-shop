@@ -12,12 +12,12 @@ class Shop extends Component {
   render() {
     return (
       <div className="Shop">
-        {this.props.items.map((value) =>
+        {this.props.items.map((item) =>
           <ShopItem
-            item={value}
-            key={`item-${value.id}`}
-            toggleInCart={() => { this.props.toggleInCart(value.id) }}
-            toggleInWhish={() => { this.props.toggleInWhish(value.id) }} />
+            item={item}
+            key={`item-${item.id}`}
+            addToCart={() => { this.props.addToCart(item) }}
+            toggleInWhish={() => { this.props.toggleInWhish(item) }} />
         )}
       </div>
     )

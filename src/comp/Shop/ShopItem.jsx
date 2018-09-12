@@ -13,9 +13,9 @@ const ShopItem = (props) => {
         <div className="interact">
           <div className="price">{props.item.price}</div>
           <div className={`cart ${props.item.inCart}`}
-            onClick={props.toggleInCart}>
+            onClick={props.addToCart}>
             <FontAwesomeIcon icon="shopping-basket" /></div>
-          <div className={`whish ${props.item.inWhish}`}
+          <div className={`whish ${props.item.inWish}`}
             onClick={props.toggleInWhish}>
             <FontAwesomeIcon icon="heart" /></div>
         </div>

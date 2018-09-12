@@ -1,15 +1,32 @@
 import { connect } from 'react-redux'
-import * as actions from '../actions/shopActions'
+import * as cart from '../actions/cartActions'
+import * as wish from '../actions/wishActions'
 
 import Shop from './Shop/Shop'
 
-const mapStateToProps = (state) => ({
-  items: state.shop.items
-})
+const mapStateToProps = (state) => {
+  const items = [...state.shop.items]
+
+  state.cart.items.forEach(cItem => {
+    items
+      .find(sItem => sItem.id === cItem.id)
+      .inCart = true
+  })
+
+  state.wish.items.forEach(wItem => {
+    items
+      .find(sItem => sItem.id === wItem.id)
+      .inWish = true
+  })
+
+  return {
+    items: items
+  }
+}
 
 const mapDispatchToProps = (dispatch) => ({
-  toggleInCart: (id) => dispatch(actions.toggleInCart(id)),
-  toggleInWhish: (id) => dispatch(actions.toggleInWhish(id))
+  addToCart: (item) => dispatch(cart.addItem(item)),
+  toggleInWhish: (item) => dispatch(wish.toggleItem(item))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Shop)
