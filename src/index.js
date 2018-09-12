@@ -6,7 +6,7 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { faShoppingBasket, faBook, faHeart } from '@fortawesome/free-solid-svg-icons'
 
 import preloadedState from './../data.json'
-import reducers from './reducers/index'
+import reducers from './reducers/.index'
 import Home from './sites/Home'
 import 'normalize.css'
 

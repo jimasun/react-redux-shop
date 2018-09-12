@@ -1,10 +1,10 @@
 {
   "shop": {
-    "cart": [],
-    "whish": [],
     "items": [
       {
         "id": 1,
+        "inCart": false,
+        "inWhish": false,
         "subject": "Redux",
         "title": "Complete Redux Book",
         "author": "Ilya Gelman",
@@ -13,6 +13,8 @@
       },
       {
         "id": 2,
+        "inCart": false,
+        "inWhish": false,
         "subject": "React",
         "title": "React - Up and Running",
         "author": "Stoyan Stefanov",
@@ -21,6 +23,8 @@
       },
       {
         "id": 3,
+        "inCart": false,
+        "inWhish": false,
         "subject": "React",
         "title": "React JS",
         "author": "Abdul Rahman",
@@ -29,6 +33,8 @@
       },
       {
         "id": 4,
+        "inCart": false,
+        "inWhish": false,
         "subject": "Redux",
         "title": "Learning Redux",
         "author": "Sam Slotsky",

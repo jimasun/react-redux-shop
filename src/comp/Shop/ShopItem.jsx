@@ -12,10 +12,10 @@ const ShopItem = (props) => {
         <div className="author">{props.item.author}</div>
         <div className="interact">
           <div className="price">{props.item.price}</div>
-          <div className={`cart ${!!props.item.inCart}`}
+          <div className={`cart ${props.item.inCart}`}
             onClick={props.toggleInCart}>
             <FontAwesomeIcon icon="shopping-basket" /></div>
-          <div className={`whish ${!!props.item.inWhish}`}
+          <div className={`whish ${props.item.inWhish}`}
             onClick={props.toggleInWhish}>
             <FontAwesomeIcon icon="heart" /></div>
         </div>

@@ -1,6 +1,0 @@
-export const TOGGLE_IN_CART = 'TOGGLE_IN_CART'
-export const TOGGLE_IN_WHISH = 'TOGGLE_IN_WHISH'
-export const ADD_TO_CART = 'ADD_TO_CART'
-export const REM_FROM_CART = 'REM_FROM_CART'
-export const ADD_TO_WHISH = 'ADD_TO_WHISH'
-export const REM_FROM_WHISH = 'REM_FROM_WHISH'
