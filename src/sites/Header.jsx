@@ -12,6 +12,10 @@ class Header extends Component {
     document.querySelector('.Cart').classList.toggle('visible')
   }
 
+  toggleWish() {
+    document.querySelector('.Wish').classList.toggle('visible')
+  }
+
   render() {
     return (
       <div className="Header">
@@ -20,7 +24,7 @@ class Header extends Component {
         <div className="title">
           React/ Redux Book Store</div>
         <div className="wish"
-          onClick={this.toggleCart}>
+          onClick={this.toggleWish}>
           <FontAwesomeIcon icon="heart" /></div>
         <div className="cart"
           onClick={this.toggleCart}>
