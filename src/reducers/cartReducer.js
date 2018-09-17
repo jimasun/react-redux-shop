@@ -15,7 +15,7 @@ const toggleItem = (prevState, action) => {
 
 const addItem = (prevState, action) => {
   let count = 1,
-    price = parseInt(action.item.price),
+    price = parseFloat(action.item.price),
     total = price,
     item = prevState.items.find(item => item.id === action.item.id),
     index = prevState.items.indexOf(item),
