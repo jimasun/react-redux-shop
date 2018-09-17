@@ -44,6 +44,11 @@
 }
 
 .ShopItem .interact .cart.true,
-.ShopItem .interact .whish.true  {
-  color: blueviolet;
+.ShopItem .interact .cart:hover {
+  color: green;
+}
+
+.ShopItem .interact .whish.true,
+.ShopItem .interact .whish:hover {
+  color: red;
 }

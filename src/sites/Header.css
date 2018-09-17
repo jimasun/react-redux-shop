@@ -1,4 +1,5 @@
 .Header {
+  display: flex;
   height: 60px;
   background-color: aliceblue;
   line-height: 60px;
@@ -6,15 +7,24 @@
   font-family: Georgia;
 }
 
-.title {
-  float: left;
+.Header>.title {
+  margin-left: 8px;
 }
 
-.title .icon {
-  margin-right: 8px;
+.Header>.wish {
+  margin-left: auto;
 }
 
-.cart {
-  float: right;;
+.Header>.wish,
+.Header>.cart {
+  padding: 0 8px;
   cursor: pointer;
+}
+
+.Header>.wish:hover {
+  color: red;
+}
+
+.Header>.cart:hover {
+  color: green;
 }
