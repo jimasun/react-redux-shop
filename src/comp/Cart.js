@@ -4,7 +4,8 @@ import * as action from './../actions/cartActions'
 import Cart from './Cart/Cart'
 
 const mapStateToProps = (state) => ({
-  items: [...state.cart.items].map(itemInCart => Object.assign(
+  items: state.cart.items.map(itemInCart => Object.assign(
+    {},
     itemInCart,
     state.shop.items.find(item => item.id === itemInCart.id)
   )),
