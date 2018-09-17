@@ -16,7 +16,7 @@ const CartItem = (props) => {
         step="1"
         value={props.item.count}
         onChange={(event)=>{props.updateItemCount(event.target.value)}} />
-      <span className="total">{props.item.total}</span>
+      <span className="total">{props.item.total.toFixed(2)}</span>
       <span className="remove"
         onClick={props.removeItem}>
         <FontAwesomeIcon icon="trash" />        

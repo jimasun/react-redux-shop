@@ -11,7 +11,7 @@ const ShopItem = (props) => {
         <div className="title">{props.item.title}</div>
         <div className="author">{props.item.author}</div>
         <div className="interact">
-          <div className="price">{props.item.price}</div>
+          <div className="price">{props.item.price.toFixed(2)}</div>
           <div className={`cart ${props.item.inCart}`}
             onClick={props.addToCart}>
             <FontAwesomeIcon icon="shopping-basket" /></div>
