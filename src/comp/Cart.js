@@ -7,7 +7,8 @@ const mapStateToProps = (state) => ({
   items: [...state.cart.items].map(itemInCart => Object.assign(
     itemInCart,
     state.shop.items.find(item => item.id === itemInCart.id)
-  ))
+  )),
+  total: state.cart.total
 })
 
 const mapDispatchToProps = (dispatch) => ({

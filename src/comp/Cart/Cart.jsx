@@ -9,19 +9,22 @@ const Cart = (props) => {
       <div className="header">
         <span className="title">
           You have
-          <span className="count"></span>
+          <span className="count"> {props.items.length} </span>
           item(s) in your basket
         </span>
         <span className="checkout">
-          <span className="price"></span>
+          Checkout
+          <span className="price"> {props.total}</span>
         </span>
       </div>
       <div className="items">
-        {props.items.map(item => {
+        {props.items.map(item =>
           <CartItem
             key={`item-${item.id}`}
-            item={item} />
-        })}
+            item={item}
+            removeItem={()=>{props.removeItem(item)}}
+            updateItemCount={(count)=>{props.updateItemCount(item, count)}} />
+        )}
       </div>
     </div>
   )
