@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-import Cart from './../comp/Cart'
-
 import './Header.css'
 
 class Header extends Component {
@@ -17,14 +15,16 @@ class Header extends Component {
   render() {
     return (
       <div className="Header">
+        <div className="icon">
+          <FontAwesomeIcon icon="book" /></div>
         <div className="title">
-          <span className="icon">
-            <FontAwesomeIcon icon="book" /></span>
           React/ Redux Book Store</div>
+        <div className="wish"
+          onClick={this.toggleCart}>
+          <FontAwesomeIcon icon="heart" /></div>
         <div className="cart"
           onClick={this.toggleCart}>
-          <FontAwesomeIcon icon="shopping-basket" />
-          <Cart /></div>
+          <FontAwesomeIcon icon="shopping-basket" /></div>
       </div>
     )
   }
