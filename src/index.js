@@ -1,28 +1,40 @@
 import React from 'react'
+import Thunk from 'redux-thunk'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
-import { createStore } from 'redux'
+import { createStore, applyMiddleware } from 'redux'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faShoppingBasket, faBook, faHeart, faTrash, faSpinner } from '@fortawesome/free-solid-svg-icons'
+import { faShoppingBasket, faBeer, faHeart, faTrash, faSpinner } from '@fortawesome/free-solid-svg-icons'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
-import preloadedState from './../data.json'
+import ShopPage from './sites/ShopPage'
+import ShopItemPage from './sites/ShopItemPage'
+
+import beers from '../beers.json'
 import reducers from './reducers/.index'
-import Home from './sites/Home'
-import withLoading from './hoc/Loading'
-import 'normalize.css'
 
-library.add(faShoppingBasket, faBook, faHeart, faTrash, faSpinner)
+library.add(faShoppingBasket, faBeer, faHeart, faTrash, faSpinner)
 
-const HomeWithLoading = new withLoading(Home, {
-  componentSelector: '',
-  loading: true,
-  fullScreen: false,
-  text: 'loading...'
-})
+const preloadedState = {
+  shop: {
+    items: beers
+  }
+}
+
+const store = createStore(
+  reducers,
+  preloadedState,
+  applyMiddleware(Thunk)
+)
 
 render(
-  <Provider store={createStore(reducers, preloadedState)}>
-    <HomeWithLoading />
+  <Provider store={store}>
+    <BrowserRouter>
+      <Switch>
+        <Route path="/items/:name/:id" component={ShopItemPage} />
+        <Route component={ShopPage} />
+      </Switch>
+    </BrowserRouter>
   </Provider>,
   document.querySelector('#root')
 )
