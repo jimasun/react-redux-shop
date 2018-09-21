@@ -9,6 +9,14 @@ class Shop extends Component {
     super(props)
   }
 
+  urlName(name) {
+    return encodeURI(name.replace(/\s/g, '-'))
+  }
+
+  componentDidMount() {
+    // this.props.fetchItemsAsync()
+  }
+
   render() {
     return (
       <div className="Shop">
@@ -16,6 +24,7 @@ class Shop extends Component {
           <ShopItem
             item={item}
             key={`item-${item.id}`}
+            urlName={this.urlName(item.name)}
             addToCart={() => { this.props.addToCart(item) }}
             toggleInWish={() => { this.props.toggleInWish(item.id) }} />
         )}

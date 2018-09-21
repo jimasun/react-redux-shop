@@ -6,7 +6,8 @@
 
 .ShopItem .image {
   height: 300px;
-  background: lightgray;
+  text-align: center;
+  background-color: aliceblue;
 }
 
 .ShopItem .image img {

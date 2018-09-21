@@ -1,6 +1,7 @@
 import { connect } from 'react-redux'
 import * as cart from '../actions/cartActions'
 import * as wish from '../actions/wishActions'
+import * as shop from '../actions/shopActions'
 
 import Shop from './Shop/Shop'
 
@@ -22,7 +23,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => ({
   addToCart: (item) => dispatch(cart.addItem(item)),
-  toggleInWish: (id) => dispatch(wish.toggleItem(id))
+  toggleInWish: (id) => dispatch(wish.toggleItem(id)),
+  fetchItemsAsync: () => dispatch(shop.fetchItemsAsync())
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Shop)

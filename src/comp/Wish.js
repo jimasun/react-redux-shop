@@ -8,7 +8,7 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  removeFromWish: (id) => { dispatch(action.remFromWish(id)) }
+  removeFromWish: (id) => { dispatch(action.removeItem(id)) }
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Wish)
