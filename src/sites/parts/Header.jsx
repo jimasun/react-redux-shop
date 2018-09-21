@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import Cart from '../../comp/Cart'
@@ -22,10 +23,12 @@ class Header extends Component {
   render() {
     return (
       <div className="Header">
-        <div className="icon">
-          <FontAwesomeIcon icon="beer" /></div>
-        <div className="title">
-          Punk Beer Store</div>
+        <Link className="link" to="/">
+          <div className="icon">
+            <FontAwesomeIcon icon="beer" /></div>
+          <div className="title">
+            Punk Beer Store</div>
+        </Link>
         <div className="wish"
           onClick={this.toggleWish}>
           <FontAwesomeIcon icon="heart" /></div>
