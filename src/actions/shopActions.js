@@ -8,6 +8,7 @@ export const fetchItemsFail = makeActionCreator(type.SHOP_FET_FAIL, 'error')
 
 export const fetchItemsAsync = () => {
   return (dispatch, getState) => {
+    dispatch(fetchItemsStart())
     fetch('https://api.punkapi.com/v2/beers/')
       .then(
         response => {

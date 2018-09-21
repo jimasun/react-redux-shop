@@ -2,15 +2,14 @@ import * as type from './../actions/.index'
 
 const initialState = {
   items: [],
-  loading: {
-    fetching: false,
-    error: false
-  }
+  loading: false,
+  error: false
 }
 
 function fetchItems(prevState, action) {
   return Object.assign({}, prevState, {
-    items: action.items
+    items: action.items,
+    loading: false
   })
 }
 

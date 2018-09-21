@@ -3,10 +3,10 @@ import React, { Component } from 'react'
 import './Loading.css'
 
 const defaultState = {
-  componentSelector: '',
   loading: true,
   fullScreen: false,
-  text: 'loading...'
+  text: 'loading...',
+  error: false
 }
 
 const withLoading = (WrappedComponent, options = defaultState) => {
@@ -16,12 +16,25 @@ const withLoading = (WrappedComponent, options = defaultState) => {
       this.state = options
     }
 
-    startLoading() {
+    shouldComponentUpdate(nextProps, nextState) {
+      // this.props.loading
+      // ? startLoading()
+      // : stopLoading()
+      return true
+    }
 
+    componentDidUpdate(prevProps, prevState) {
+      this.props.loading
+      ? this.startLoading()
+      : this.stopLoading()
+    }
+
+    startLoading() {
+      document.querySelector('.Loading').classList.toggle('active', true)
     }
 
     stopLoading() {
-
+      document.querySelector('.Loading').classList.toggle('active', false)
     }
 
     render() {
@@ -30,9 +43,7 @@ const withLoading = (WrappedComponent, options = defaultState) => {
           <div className="Loading">
             <div className="indicator" />
           </div>
-          <WrappedComponent {...this.props}
-            startLoading={this.startLoading}
-            stopLoading={this.stopLoading} />
+          <WrappedComponent {...this.props} />
         </div>
       )
     }

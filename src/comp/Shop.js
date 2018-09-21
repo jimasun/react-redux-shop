@@ -4,6 +4,7 @@ import * as wish from '../actions/wishActions'
 import * as shop from '../actions/shopActions'
 
 import Shop from './Shop/Shop'
+import withLoading from '../hoc/Loading'
 
 const mapStateToProps = (state) => {
   const items = [...state.shop.items]
@@ -17,7 +18,9 @@ const mapStateToProps = (state) => {
   })
 
   return {
-    items: items
+    items: items,
+    loading: state.shop.loading,
+    error: state.shop.error
   }
 }
 
@@ -27,4 +30,10 @@ const mapDispatchToProps = (dispatch) => ({
   fetchItemsAsync: () => dispatch(shop.fetchItemsAsync())
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(Shop)
+const ShopWithLoading = withLoading(Shop, {
+  fullScreen: false,
+  text: 'loading...',
+  error: false
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(ShopWithLoading)
