@@ -14,7 +14,7 @@ class Shop extends Component {
   }
 
   componentDidMount() {
-    // this.props.fetchItemsAsync()
+    this.props.fetchItemsAsync()
   }
 
   render() {
