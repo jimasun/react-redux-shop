@@ -14,10 +14,12 @@ class Header extends Component {
 
   toggleCart() {
     document.querySelector('.Cart').classList.toggle('visible')
+    document.querySelector('.Wish').classList.toggle('visible', false)
   }
 
   toggleWish() {
     document.querySelector('.Wish').classList.toggle('visible')
+    document.querySelector('.Cart').classList.toggle('visible', false)
   }
 
   render() {
