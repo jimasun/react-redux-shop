@@ -14,7 +14,7 @@ export const SHOP_FET_STOP = 'SHOP_FET_STOP'
 export const SHOP_FET_FAIL = 'SHOP_FET_FAIL'
 
 // Helper function to create basic actionCreators
-export function makeActionCreator(type, ...argNames) {
+export const makeActionCreator = (type, ...argNames) => {
   return {
     [type](...args) {
       const action = { type }

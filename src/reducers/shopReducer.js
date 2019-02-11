@@ -6,27 +6,27 @@ const initialState = {
   error: false
 }
 
-function fetchItems(prevState, action) {
+const fetchItems = (prevState, action) => {
   return Object.assign({}, prevState, {
     items: action.items,
     loading: false
   })
 }
 
-function fetchItemsStart(prevState, action) {
+const fetchItemsStart = (prevState, action) => {
   return Object.assign({}, prevState, {
     loading: true,
     error: false
   })
 }
 
-function fetchItemsStop(prevState, action) {
+const fetchItemsStop = (prevState, action) => {
   return Object.assign({}, prevState, {
     loading: false
   })
 }
 
-function fetchItemsFail(prevState, action) {
+const fetchItemsFail = (prevState, action) => {
   return Object.assign({}, prevState, {
     loading: false,
     error: action.error

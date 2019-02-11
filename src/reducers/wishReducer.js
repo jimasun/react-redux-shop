@@ -4,7 +4,7 @@ const initialState = {
   items: []
 }
 
-function toggleItem(prevState, action) {
+const toggleItem = (prevState, action) => {
   if (!!prevState.items.find(wItemId => wItemId === action.id)) {
     return removeItem(prevState, action)
   } else {
@@ -12,13 +12,13 @@ function toggleItem(prevState, action) {
   }
 }
 
-function addItem(prevState, action) {
+const addItem = (prevState, action) => {
   return Object.assign({}, prevState, {
     items: [...prevState.items, action.id]
   })
 }
 
-function removeItem(prevState, action) {
+const removeItem = (prevState, action) => {
   return Object.assign({}, prevState, {
     items: [...prevState.items]
       .filter(item => item !== action.id) || []
